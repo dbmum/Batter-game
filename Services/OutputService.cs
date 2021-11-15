@@ -102,7 +102,7 @@ namespace cse210_batter_csharp.Services
 
             if (darkText)
             {
-                color = Raylib_cs.Color.BLACK;
+                color = Raylib_cs.Color.WHITE;
             }
 
             Raylib.DrawText(text,

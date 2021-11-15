@@ -44,6 +44,14 @@ namespace cse210_batter_csharp
 
         public const int BALL_WIDTH = 24;
         public const int BALL_HEIGHT = 24;
+
+        public const int ROWS_OF_BRICKS = 5;
+
+        public const int SCOREBOARD_HEIGHT = 24;
+        public const int SCOREBOARD_WIDTH = 100;
+        public const int SCOREBOARD_X = MAX_X - SCOREBOARD_WIDTH;
+        public const int SCOREBOARD_Y = MAX_Y - SCOREBOARD_HEIGHT;
+        public const int STARTING_LIVES = 3;
     }
 
 }

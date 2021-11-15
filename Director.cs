@@ -18,11 +18,13 @@ namespace cse210_batter_csharp
         private bool _keepPlaying = true;
         private Dictionary<string, List<Actor>> _cast;
         private Dictionary<string, List<Action>> _script;
+        private Scoreboard _scoreboard;
 
-        public Director(Dictionary<string, List<Actor>> cast, Dictionary<string, List<Action>> script)
+        public Director(Dictionary<string, List<Actor>> cast, Dictionary<string, List<Action>> script, Scoreboard scoreboard)
         {
             _cast = cast;
             _script = script;
+            _scoreboard = scoreboard;
         }
 
         /// <summary>
@@ -32,11 +34,18 @@ namespace cse210_batter_csharp
         {
             while (_keepPlaying)
             {
+                int brickCount = _cast["bricks"].Count;
+
                 CueAction("input");
                 CueAction("update");
                 CueAction("output");
 
                 if (Raylib_cs.Raylib.WindowShouldClose())
+                {
+                    _keepPlaying = false;
+                }
+
+                if (_scoreboard.IsGameOver() || brickCount == 0)
                 {
                     _keepPlaying = false;
                 }
